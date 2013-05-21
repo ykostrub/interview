@@ -5,11 +5,9 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-import org.apache.commons.beanutils.BeanUtils;
-import org.apache.commons.lang3.SerializationUtils;
+import org.apache.commons.lang.SerializationUtils;
 
 import com.rits.cloning.Cloner;
-
 public class Test {
 
   /**
@@ -34,11 +32,11 @@ public class Test {
      Thread.currentThread().sleep(1000L);
  //     PrototypeClone cl2 = (PrototypeClone) BeanUtils.cloneBean(cl);   
 //      
-      Cloner c = new Cloner();
-      PrototypeClone cl2 = c.deepClone(cl);
+//      Cloner c = new Cloner();
+//      PrototypeClone cl2 = c.deepClone(cl);
       
 //      PrototypeClone cl2 = (PrototypeClone) CloneUtils.deepClone(cl);
-//      PrototypeClone cl2 = SerializationUtils.clone(cl);
+      PrototypeClone cl2 = (PrototypeClone) SerializationUtils.clone(cl);
       cl.getLs().get(0).setName("1234");
       cl.getPt().setName("3");
 //      
