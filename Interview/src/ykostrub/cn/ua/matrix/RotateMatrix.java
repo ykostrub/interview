@@ -22,13 +22,29 @@ public class RotateMatrix {
       }
     }
     printMatrix(matrix);
-    rotateMatrix(matrix, size);
+    rotateMatrixRight(matrix, size);
+ //   rotateMatrix(matrix, size);
     printMatrix(matrix);
-    rotateMatrixLeft(matrix, size);    
-    printMatrix(matrix);
+  //  rotateMatrixLeft(matrix, size);    
+  //  printMatrix(matrix);
 
 
   }
+  
+  public static void rotateMatrixRight(int[][] m, int size){
+    for (int layer = 0; layer < size / 2; layer++) {
+      int first = layer;
+      int last = size - 1 - layer;
+      
+      for (int i = first; i < last; i++) {
+        System.out.println(m[first][i]);
+      }
+      
+      
+    }
+
+  }
+  
 
   public static void rotateMatrix(
       int[][] m,
@@ -57,13 +73,13 @@ public class RotateMatrix {
 
   }
 
-  private static void rotateMatrixLeft(
+  public static void rotateMatrixLeft(
       int[][] m,
       int size) {
     for (int layer = 0; layer < size / 2; layer++) {
       int first = layer;
       int last = size - 1 - layer;
-      for (int i = first; i < last; i++) {
+      for (int i = first; i < last; ++i) {
         int offset = i - first;
         // save top
         int top = m[first][i];

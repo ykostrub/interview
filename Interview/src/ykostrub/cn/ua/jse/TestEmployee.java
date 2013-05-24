@@ -1,22 +1,21 @@
 package ykostrub.cn.ua.jse;
 
-import java.util.Arrays;
 
 public class TestEmployee {
   
   public static void main(
       String[] args) {
     
-    Employee [] staff = new Employee[3];
-    staff[0] = new Employee("David Cop", 123, 1990, 1, 12);
-    staff[1] = new Employee("David Moyes", 126, 1987, 12, 1);
-    staff[2] = new Employee("Tony Tramp", 123, 1980, 11, 22);
-    System.out.println(Arrays.toString(staff));
+    Person [] p = new Person[4];
+    p[0] = new Employee("David Cop", 123, 1990, 1, 12);
+    p[1] = new Employee("David Moyes", 126, 1987, 12, 1);
+    p[2] = new Employee("Tony Tramp", 123, 1980, 11, 22);
+    p[3] = new Student("Stive Jobs", "computer science");
     
-    for (Employee employee : staff) {
-      employee.raiseSalary(5);
+    for (Person person : p) {
+      System.out.println("name = " + person.getName() +", " + person.getDescription());
     }
-    System.out.println(Arrays.toString(staff));
+
     
   }
 

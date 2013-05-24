@@ -3,9 +3,8 @@ package ykostrub.cn.ua.jse;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-public class Employee {
+public class Employee extends Person {
 
-  private String name;
   private double salary;
   private Date hireDay;
 
@@ -15,21 +14,13 @@ public class Employee {
       final int year,
       final int month,
       final int day) {
-    super();
-    this.name = name;
+    super(name);
     this.salary = salary;
     GregorianCalendar c = new GregorianCalendar(year, month -1, day);
     this.hireDay = c.getTime();
   }
 
-  public String getName() {
-    return name;
-  }
 
-  public void setName(
-      String name) {
-    this.name = name;
-  }
 
   public double getSalary() {
     return salary;
@@ -57,7 +48,14 @@ public class Employee {
 
   @Override
   public String toString() {
-    return "Employee [name=" + name + ", salary=" + salary + ", hireDay=" + hireDay + "]";
+    return "Employee [name=" + super.getName() + ", salary=" + getSalary() + ", hireDay=" + hireDay + "]";
+  }
+
+
+
+  @Override
+  public String getDescription() {
+    return String.format( "an employee with a salaryof $%.2f", salary);
   }
 
   

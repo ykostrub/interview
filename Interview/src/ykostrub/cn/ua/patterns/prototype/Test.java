@@ -1,4 +1,4 @@
-package ykostrub.cn.ua.patterns;
+package ykostrub.cn.ua.patterns.prototype;
 
 import java.awt.List;
 import java.util.ArrayList;

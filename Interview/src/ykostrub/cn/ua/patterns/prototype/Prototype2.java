@@ -1,4 +1,4 @@
-package ykostrub.cn.ua.patterns;
+package ykostrub.cn.ua.patterns.prototype;
 
 public class Prototype2 extends Prototype implements Cloneable{
 
